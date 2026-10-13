@@ -1,0 +1,85 @@
+# Local environment, credentials, and machine configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.ssh/
+.npmrc
+.netrc
+
+# Dependencies, caches, and temporary output
+node_modules/
+.npm/
+.cache/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+*.temp
+*.bak
+*~
+coverage/
+test-results/
+playwright-report/
+tmp/
+temp/
+build/
+.worktrees/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Private resumes, job materials, photos, and personal exports.
+# Only reviewed public documentation and fictional fixtures are allowlisted.
+private/
+resumes/
+exports/
+uploads/
+*.md
+*.markdown
+*.json
+*.jsonl
+*.yaml
+*.yml
+*.csv
+*.tsv
+*.txt
+*.pdf
+*.doc
+*.docx
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.heic
+*.zip
+*.patch
+*.html
+!/README.md
+!/CONTRIBUTING.md
+!/AGENTS.md
+!/docs/**/*.md
+!/fixtures/**/*.md
+!/fixtures/**/*.json
+!/package.json
+!/package-lock.json
+!/.github/workflows/*.yml
+!/src/index.template.html
+!/index.html
+!/resume-formatter.html
+!/dist/resume-formatter.html
+
+# The three HTML files above are intentional, tracked release artifacts.
+# Build them only from the fictional fixture; never replace them with personal exports.

@@ -1,0 +1,17 @@
+{
+  "name": "resume-copilot",
+  "version": "1.1.0",
+  "description": "Offline Markdown/JSON resume editor with A4 layout and JD optimization prompts.",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check-release.mjs",
+    "start": "node scripts/serve.mjs",
+    "start:ai": "node scripts/build.mjs && node scripts/serve-ai.mjs"
+  }
+}

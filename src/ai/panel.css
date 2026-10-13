@@ -1,0 +1,46 @@
+/* Shares the editor's warm paper/rose palette; the paired proof is the focal point. */
+.ai-panel { grid-area: ai; min-width: 0; padding: 24px 20px; background: var(--surface); border-left: 1px solid var(--border-strong); font: 13px/1.65 var(--font-sans); }
+body.ai-panel-open #app { grid-template-columns: minmax(0, 1fr) 230px 410px; grid-template-areas: "toolbar toolbar toolbar" "privacy privacy privacy" "workspace panel ai"; }
+body.ai-panel-open #workspace { overflow-x: auto; align-items: flex-start; }
+#btn-ai-assistant { margin: 18px 16px 2px; width: calc(100% - 32px); }
+.ai-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ai-eyebrow { color: var(--text-secondary); font-size: 11px; letter-spacing: .12em; }
+.ai-header h2 { font: 600 26px/1.3 var(--font-serif); margin: 3px 0 0; }
+.ai-note { color: var(--text-secondary); font-size: 12px; margin: 10px 0 16px; }
+.ai-settings { padding: 14px; margin-bottom: 18px; background: var(--surface-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.ai-panel summary { cursor: pointer; font-weight: 600; }
+.ai-field { display: grid; gap: 6px; margin: 12px 0; font-weight: 550; }
+.ai-input { width: 100%; border: 1px solid var(--border-strong); border-radius: 6px; padding: 9px 10px; font: 13px/1.5 var(--font-sans); color: var(--text-primary); background: var(--surface); }
+.ai-panel textarea { resize: vertical; min-height: 62px; max-height: 320px; }
+.ai-button { padding: 8px 11px; background: var(--surface); border: 1px solid var(--border-strong); border-radius: 7px; color: var(--text-primary); font: 550 12px/1.4 var(--font-sans); cursor: pointer; }
+.ai-button:hover { background: var(--accent-light); }
+.ai-primary { color: white; background: var(--accent); border-color: var(--accent); }
+.ai-primary:hover { color: white; background: var(--accent-hover); }
+.ai-button:disabled, .ai-input:disabled { opacity: .55; cursor: default; }
+.ai-panel :is(button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.ai-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.ai-connection, .ai-status { font-size: 12px; overflow-wrap: anywhere; }
+.ai-status { min-height: 20px; color: var(--accent-hover); }
+.ai-send-preview { margin: 14px 0 20px; font-size: 12px; }
+.ai-preview-text { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 300px; overflow: auto; font: 12px/1.65 var(--font-sans); }
+.ai-history-header { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--border-strong); }
+.ai-chat { min-height: 140px; max-height: 370px; overflow: auto; margin: 12px 0; scrollbar-gutter: stable; }
+.ai-empty { padding: 18px 8px; color: var(--text-secondary); }
+.ai-message { margin: 12px 0; padding: 12px; border-left: 2px solid var(--border-strong); }
+.ai-message-user { background: var(--surface-secondary); }
+.ai-message-assistant { border-color: var(--accent); }
+.ai-message-label { color: var(--text-secondary); font-size: 11px; }
+.ai-message-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.ai-candidate:empty { display: none; }
+.ai-candidate { border-top: 2px solid var(--accent); margin-top: 24px; padding-top: 8px; }
+.ai-candidate h3 { font: 600 20px var(--font-serif); }
+.ai-warning { color: var(--danger); }
+.ai-comparison { display: grid; gap: 14px; margin: 16px 0; }
+.ai-comparison section { min-width: 0; }
+.ai-diff { background: var(--surface-secondary); padding: 12px; max-height: 330px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.7 var(--font-sans); }
+.ai-changed { background: var(--accent-light); color: var(--accent-hover); }
+.ai-confirm { display: flex; align-items: flex-start; gap: 8px; margin: 16px 0; font-size: 12px; }
+.ai-confirm input { width: auto; margin-top: 4px; }
+@media (min-width: 1700px) { body.ai-panel-open #app { grid-template-columns: minmax(0, 1fr) 230px 500px; } .ai-comparison { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1150px) { body.ai-panel-open #app { grid-template-columns: minmax(0, 1fr) 230px; grid-template-areas: "toolbar toolbar" "privacy privacy" "workspace panel"; } .ai-panel { position: fixed; z-index: 450; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); overflow-y: auto; box-shadow: var(--shadow-lg); } }
+@media print { .ai-panel, #btn-ai-assistant { display: none !important; } body.ai-panel-open #app { display: block !important; } }
